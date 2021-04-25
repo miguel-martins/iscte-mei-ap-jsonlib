@@ -6,6 +6,6 @@ import models.JSONObject
 * Composite Element in Visitor pattern
 * */
 
-abstract class JSONComposite() : JSONValue() {
+abstract class JSONComposite : JSONValue() {
 
 }
