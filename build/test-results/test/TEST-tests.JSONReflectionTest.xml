@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.JSONReflectionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-04-26T18:46:42" hostname="MIGUEL" time="0.677">
+  <properties/>
+  <testcase name="testObjectGeneration()" classname="tests.JSONReflectionTest" time="0.675"/>
+  <testcase name="testArrayGeneration()" classname="tests.JSONReflectionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
