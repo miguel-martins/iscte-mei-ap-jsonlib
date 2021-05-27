@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.JSONModelsTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-04-26T18:46:42" hostname="MIGUEL" time="0.072">
+<testsuite name="tests.JSONModelsTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-05-27T20:35:47" hostname="MIGUEL" time="0.015">
   <properties/>
-  <testcase name="testStringKeyValuePair()" classname="tests.JSONModelsTest" time="0.05"/>
+  <testcase name="testStringKeyValuePair()" classname="tests.JSONModelsTest" time="0.001"/>
   <testcase name="testStringJSONValue()" classname="tests.JSONModelsTest" time="0.001"/>
   <testcase name="testNullJSONValue()" classname="tests.JSONModelsTest" time="0.001"/>
-  <testcase name="testBooleanKeyValuePair()" classname="tests.JSONModelsTest" time="0.002"/>
-  <testcase name="testNumberJSONValue()" classname="tests.JSONModelsTest" time="0.002"/>
+  <testcase name="testBooleanKeyValuePair()" classname="tests.JSONModelsTest" time="0.001"/>
+  <testcase name="testNumberJSONValue()" classname="tests.JSONModelsTest" time="0.001"/>
   <testcase name="testNullKeyValuePair()" classname="tests.JSONModelsTest" time="0.001"/>
-  <testcase name="testNumberKeyValuePair()" classname="tests.JSONModelsTest" time="0.002"/>
-  <testcase name="testBooleanJSONValue()" classname="tests.JSONModelsTest" time="0.002"/>
+  <testcase name="testNumberKeyValuePair()" classname="tests.JSONModelsTest" time="0.001"/>
+  <testcase name="testBooleanJSONValue()" classname="tests.JSONModelsTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

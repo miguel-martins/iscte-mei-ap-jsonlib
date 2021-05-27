@@ -25,7 +25,7 @@ var jsonObjectSerializer = JSONVisitor()
 var jsonArraySerializer = JSONVisitor()
 
 var jsonObjectConditioned = JSONConditionedVisitor() {it -> it is JSONNumber}
-var jsonObjectConditioned2 = JSONConditionedVisitor() {it -> it is JSONNumber && it.value.equals(3)}
+var jsonObjectConditioned2 = JSONConditionedVisitor() {it -> it is JSONNumber && it.value == 3 }
 
 
 

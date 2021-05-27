@@ -4,7 +4,10 @@ import models.*
 
 class JSONVisitor: Visitor {
 
+    private val SEPARATOR: String = ", "
+
     var jsonString : String = ""
+    private set
 
     override fun visit(l: JSONLeaf) {
         jsonString += when(l) {
@@ -30,10 +33,12 @@ class JSONVisitor: Visitor {
     }
 
     override fun endVisit(v: JSONValue) {
-        jsonString += ", "
+        jsonString += SEPARATOR
     }
 
     override fun endVisit(c: JSONComposite) {
+        jsonString = jsonString.removeSuffix(SEPARATOR)
+
         jsonString += when(c) {
             is JSONArray -> " ]"
             is JSONObject -> " }"

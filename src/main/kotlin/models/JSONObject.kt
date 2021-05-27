@@ -16,9 +16,7 @@ data class JSONObject(val values: MutableList<JSONKeyValuePair>): JSONComposite(
         if(v.visit(this))
             values.forEach {
                 it.accept(v)
-                if(values.last() != it)
-                    v.endVisit(it)
-
+                v.endVisit(it)
             }
         v.endVisit(this)
     }
