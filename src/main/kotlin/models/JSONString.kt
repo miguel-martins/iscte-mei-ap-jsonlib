@@ -5,5 +5,5 @@ import visitor.JSONLeaf
 /*
 * Represents a JSON String value
 * */
-data class JSONString(override val value: String): JSONLeaf() {
+data class JSONString(var value: String): JSONLeaf() {
 }

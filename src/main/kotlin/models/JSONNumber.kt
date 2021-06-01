@@ -5,6 +5,6 @@ import visitor.JSONLeaf
 /*
 * Represents a JSON Number value
 * */
-data class JSONNumber(override val value: Number): JSONLeaf() {
+data class JSONNumber(var value: Number): JSONLeaf() {
 
 }

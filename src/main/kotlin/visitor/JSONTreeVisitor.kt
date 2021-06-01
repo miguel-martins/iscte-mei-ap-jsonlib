@@ -7,9 +7,9 @@ import org.eclipse.swt.widgets.Tree
 import org.eclipse.swt.widgets.TreeItem
 import java.util.*
 
-class JSONTreeVisitor(shell: Shell) : Visitor{
+class JSONTreeVisitor(var tree: Tree) : Visitor{
 
-    private val tree: Tree = Tree(shell, SWT.BORDER)
+
     private var parents: Stack<Pair<TreeItem, Boolean>> = Stack()
 
 
@@ -22,9 +22,7 @@ class JSONTreeVisitor(shell: Shell) : Visitor{
 
         val parent = parents.peek()
 
-        println(parent)
         if(parent.second) {
-            println("KEYPAIR")
             parent.first.data = element
             parents.pop()
             if(element is JSONLeaf)
@@ -76,11 +74,7 @@ class JSONTreeVisitor(shell: Shell) : Visitor{
         val newTreeItem = createTreeItem(keyValPair)
         newTreeItem!!.text = treeItemText
         newTreeItem.data = keyValPair.value
-        println("added keyval")
         parents.push(Pair(newTreeItem, true))
     }
 
-    fun getTree(): Tree {
-        return tree
-    }
 }
