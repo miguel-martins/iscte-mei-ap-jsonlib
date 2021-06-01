@@ -54,7 +54,7 @@ class JSONTreeVisitor(var tree: Tree) : Visitor{
 
         val treeItemText = when(c) {
             is JSONObject -> "{ object }"
-            else  -> "{ array }"
+            else  -> "[ array ]"
         }
         var newTreeItem = createTreeItem(c)
 

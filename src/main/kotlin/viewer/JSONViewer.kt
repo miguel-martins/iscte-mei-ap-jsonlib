@@ -18,7 +18,7 @@ import visitor.JSONValue
 import visitor.JSONVisitor
 
 fun main() {
-    Injector.create(JSONViewer(JSONGenerator().buildFrom(mutableListOf(1,false,"hello",json)))).open()
+    Injector.create(JSONViewer(JSONGenerator().buildFrom(json))).open()
     //JSONViewer(JSONGenerator().buildFrom(mutableListOf(1,false,"hello",json))).open()
 }
 
@@ -97,7 +97,8 @@ class JSONViewer(val value : JSONValue) {
 
     fun open() {
         tree.expandAll()
-        applyPlugins()
+        applyPresentationPlugin()
+        applyActionPlugins()
         shell.pack()
         shell.open()
         val display = Display.getDefault()
@@ -107,32 +108,31 @@ class JSONViewer(val value : JSONValue) {
         display.dispose()
     }
 
-    private fun applyPlugins() {
-        fun applyPresentationPlugin() {
-            if(this::presentation.isInitialized)
-                presentation.execute(this)
-        }
 
-        fun applyActionPlugins() {
-            val viewer = this
-            actions.forEach {
-                val button = Button(shell, SWT.PUSH)
-                button.text = it.name
-                button.addSelectionListener(object: SelectionAdapter() {
-                    override fun widgetSelected(e: SelectionEvent) {
-                        it.execute(viewer)
-                    }
-                })
-            }
-        }
-        applyPresentationPlugin()
-        applyActionPlugins()
+    private fun applyPresentationPlugin() {
+        if(this::presentation.isInitialized)
+            presentation.execute(this)
     }
+
+    private fun applyActionPlugins() {
+        val viewer = this
+        actions.forEach {
+            val button = Button(shell, SWT.PUSH)
+            button.text = it.name
+            button.addSelectionListener(object: SelectionAdapter() {
+                override fun widgetSelected(e: SelectionEvent) {
+                    it.execute(viewer)
+                }
+            })
+        }
+    }
+
 
     fun repaint() {
         tree.removeAll()
         createTree(tree, value)
         tree.expandAll()
+        applyPresentationPlugin()
     }
 
 
